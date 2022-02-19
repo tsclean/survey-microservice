@@ -14,6 +14,6 @@ export class AddSurveyController {
 
   @Post()
   async addSurveyController (data: AddSurveyParams): Promise<void> {
-    await this.addSurveyService.save({ ...data, date: new Date() })
+    await this.addSurveyService.save({ ...data, date: new Date().toString() })
   }
 }

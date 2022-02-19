@@ -18,7 +18,9 @@ const schema = new Schema<SurveyModel>({
       }
     ]
   },
-  date: Date.now(),
+  date: {
+    type: String
+  },
   didAnswer: {
     type: Boolean
   }
