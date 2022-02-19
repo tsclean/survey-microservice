@@ -1,9 +1,24 @@
 version: '3.1'
 services:
+  db:
+    container_name: db
+    networks:
+      - backend
+    image: mongo:latest
+    restart: always
+    ports:
+      - "27018:27018"
+    volumes:
+      - /Users/john.a.piedrahita/Documents/Volumes/Surveys/mongo:/data/db
   api:
+    container_name: api
+    networks:
+      - backend
     build:
       context: .
       dockerfile: ./src/deployment/Dockerfile
+    depends_on:
+      - db
     volumes:
       - ./:/app
       - /app/node_modules
@@ -12,4 +27,13 @@ services:
     environment:
       - NODE_ENV=development
       - PORT=9000
+      - MONGO_DEVELOPMENT=mongodb://db:27018/surveys
     command: "npm run watch"
+
+volumes:
+  data01:
+    driver: local
+
+networks:
+  backend:
+    driver: bridge
