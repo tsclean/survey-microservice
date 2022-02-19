@@ -7,7 +7,8 @@
     "build": "rimraf dist && tsc -p tsconfig-build.json",
     "watch": "nodemon --exec \"npm run build && npm run start\" --watch src --ext ts",
     "prepare": "husky install",
-    "test": "jest --passWithNoTests --runInBand --no-cache"
+    "test": "jest --passWithNoTests --runInBand --no-cache",
+    "test:staged": "npm test -- --findRelatedTests"
   },
   "dependencies": {
     "@tsclean/core": "^1.7.0",
