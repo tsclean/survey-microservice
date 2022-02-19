@@ -13,7 +13,7 @@
     "lint": "eslint . --ext ts --fix"
   },
   "lint-staged": {
-    "*.ts": [
+    "src/**/*.ts": [
       "npm lint",
       "npm format",
       "npm test:staged"
