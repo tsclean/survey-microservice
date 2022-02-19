@@ -6,8 +6,8 @@
       "start": "node ./dist/index.js",
       "build": "rimraf dist && tsc -p tsconfig-build.json",
       "watch": "nodemon --exec \"npm run build && npm run start\" --watch src --ext ts",
-      "test": "jest --passWithNoTests --runInBand --no-cache",
-      "test:staged": "npm test -- --findRelatedTests",
+      "test": "jest --passWithNoTests --runInBand  --coverage --no-cache",
+      "test:staged": "npm test",
       "format": "standard --fix",
       "lint": "eslint . --ext ts --fix",
       "prepare": "husky install"
@@ -21,6 +21,7 @@
    },
    "devDependencies": {
       "@faker-js/faker": "^6.0.0-alpha.6",
+      "@shelf/jest-mongodb": "^2.2.0",
       "@types/jest": "^27.0.1",
       "@types/mongoose": "^5.11.97",
       "@types/node": "^16.9.1",
