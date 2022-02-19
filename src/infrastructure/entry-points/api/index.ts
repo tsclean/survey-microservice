@@ -1,1 +1,1 @@
-export const controllers = [];
+export const controllers = []
