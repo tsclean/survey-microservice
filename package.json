@@ -8,7 +8,16 @@
     "watch": "nodemon --exec \"npm run build && npm run start\" --watch src --ext ts",
     "prepare": "husky install",
     "test": "jest --passWithNoTests --runInBand --no-cache",
-    "test:staged": "npm test -- --findRelatedTests"
+    "test:staged": "npm test -- --findRelatedTests",
+    "format": "prettier --write",
+    "lint": "eslint . --ext ts --fix"
+  },
+  "lint-staged": {
+    "*.ts": [
+      "npm lint",
+      "npm format",
+      "npm test:staged"
+    ]
   },
   "dependencies": {
     "@tsclean/core": "^1.7.0",
