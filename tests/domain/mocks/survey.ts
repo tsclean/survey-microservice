@@ -6,12 +6,15 @@ export const mockSurveyModel = (): SurveyModel => {
   return {
     id: faker.datatype.uuid(),
     question: faker.random.words(),
-    answers: [{
-      answer: faker.random.word()
-    }, {
-      answer: faker.random.word(),
-      image: faker.image.imageUrl()
-    }],
+    answers: [
+      {
+        answer: faker.random.word()
+      },
+      {
+        answer: faker.random.word(),
+        image: faker.image.imageUrl()
+      }
+    ],
     date: faker.random.word()
   }
 }
