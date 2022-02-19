@@ -14,6 +14,6 @@ export class AddSurveyServiceImpl implements IAddSurveyService {
   ) {}
 
   async save (data: AddSurveyParams): Promise<void> {
-    return await this.addSurveyRepository.save(data)
+    await this.addSurveyRepository.save(data)
   }
 }

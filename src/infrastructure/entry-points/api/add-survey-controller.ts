@@ -1,4 +1,4 @@
-import { Adapter, Mapping, Post } from '@tsclean/core'
+import { Adapter, Body, Mapping, Post } from '@tsclean/core'
 import {
   ADD_SURVEY_SERVICE,
   IAddSurveyService
@@ -13,7 +13,7 @@ export class AddSurveyController {
   ) {}
 
   @Post()
-  async addSurveyController (data: AddSurveyParams): Promise<void> {
+  async addSurveyController (@Body() data: AddSurveyParams): Promise<void> {
     await this.addSurveyService.save({ ...data, date: new Date().toString() })
   }
 }
