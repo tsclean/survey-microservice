@@ -1,15 +1,18 @@
 import 'module-alias/register';
 
 import helmet from 'helmet';
+import { connect } from 'mongoose';
 import { StartProjectInit } from '@tsclean/core';
 
 import { AppContainer } from '@/application/app';
-import { PORT } from '@/application/config/environment';
+import { MONGODB_URI, PORT } from '@/application/config/environment';
 
-async function init(): Promise<void> {
+async function run(): Promise<void> {
+  await connect(MONGODB_URI);
+  console.log('DB Mongo connected');
   const app = await StartProjectInit.create(AppContainer);
   app.use(helmet());
-  await app.listen(PORT, () => console.log('Running on port ' + PORT));
+  await app.listen(PORT, () => console.log('Running on port: ' + PORT));
 }
 
-void init().catch((err) => console.log(err));
+void run().catch();
