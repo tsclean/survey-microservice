@@ -1,27 +1,27 @@
-import { SurveyModel } from '@/domain/models/survey';
-import { model, Schema } from 'mongoose';
+import { SurveyModel } from '@/domain/models/survey'
+import { model, Schema } from 'mongoose'
 
 const schema = new Schema<SurveyModel>({
   id: {
-    type: String,
+    type: String
   },
   question: {
     type: String,
-    required: true,
+    required: true
   },
   answers: {
     required: true,
     type: [
       {
         image: String,
-        answer: String,
-      },
-    ],
+        answer: String
+      }
+    ]
   },
   date: Date.now(),
   didAnswer: {
-    type: Boolean,
-  },
-});
+    type: Boolean
+  }
+})
 
-export const SurveyModelSchema = model<SurveyModel>('surveys', schema);
+export const SurveyModelSchema = model<SurveyModel>('surveys', schema)

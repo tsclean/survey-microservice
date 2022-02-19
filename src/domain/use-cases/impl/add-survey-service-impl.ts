@@ -1,19 +1,19 @@
-import { Adapter, Service } from '@tsclean/core';
-import { IAddSurveyService } from '@/domain/use-cases/add-survey-service';
-import { AddSurveyParams } from '@/domain/models/survey';
+import { Adapter, Service } from '@tsclean/core'
+import { IAddSurveyService } from '@/domain/use-cases/add-survey-service'
+import { AddSurveyParams } from '@/domain/models/survey'
 import {
   ADD_SURVEY_REPOSITORY,
-  IAddSurveyRepository,
-} from '@/domain/models/contracts/add-survey-repository';
+  IAddSurveyRepository
+} from '@/domain/models/contracts/add-survey-repository'
 
 @Service()
 export class AddSurveyServiceImpl implements IAddSurveyService {
-  constructor(
+  constructor (
     @Adapter(ADD_SURVEY_REPOSITORY)
     private readonly addSurveyRepository: IAddSurveyRepository
   ) {}
 
-  async save(data: AddSurveyParams): Promise<void> {
-    return await this.addSurveyRepository.save(data);
+  async save (data: AddSurveyParams): Promise<void> {
+    return await this.addSurveyRepository.save(data)
   }
 }
