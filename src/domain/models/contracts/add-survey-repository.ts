@@ -1,7 +1,7 @@
-import { AddSurveyParams } from '@/domain/models/survey';
+import { AddSurveyParams } from '@/domain/models/survey'
 
-export const ADD_SURVEY_REPOSITORY = 'ADD_SURVEY_REPOSITORY';
+export const ADD_SURVEY_REPOSITORY = 'ADD_SURVEY_REPOSITORY'
 
 export interface IAddSurveyRepository {
-  save: (data: AddSurveyParams) => Promise<void>;
+  save: (data: AddSurveyParams) => Promise<void>
 }
