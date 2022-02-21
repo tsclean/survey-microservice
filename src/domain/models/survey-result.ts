@@ -1,9 +1,9 @@
 export type SurveyResultModel = {
-  accountId: string
+  accountId?: string
   surveyId: string
   question: string
   answers: SurveyResultAnswerModel[]
-  data: Date
+  date: string
 }
 
 export type SurveyResultAnswerModel = {
