@@ -1,4 +1,5 @@
 export type SurveyResultModel = {
+  accountId: string
   surveyId: string
   question: string
   answers: SurveyResultAnswerModel[]
