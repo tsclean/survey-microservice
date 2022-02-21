@@ -20,6 +20,26 @@ export const mockSurveyModel = (): SurveyModel => {
   }
 }
 
+export const mockAddAccountParams = (): any => ({
+  name: faker.name.findName(),
+  email: faker.internet.email(),
+  password: faker.internet.password()
+})
+
+export const mockAddSurveyParams = (): any => ({
+  question: faker.random.words(),
+  answers: [
+    {
+      image: faker.image.imageUrl(),
+      answer: faker.random.word()
+    },
+    {
+      answer: faker.random.word()
+    }
+  ],
+  date: faker.date.recent()
+})
+
 export class AddSurveyRepositorySpy implements IAddSurveyRepository {
   params: AddSurveyParams
 
