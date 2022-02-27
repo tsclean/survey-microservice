@@ -27,7 +27,6 @@ export class AddSurveyController {
       }
 
       await this.addSurveyService.save({ ...data, date: new Date().toString() })
-
       return noContent()
     } catch (err) {
       return serverError(err)

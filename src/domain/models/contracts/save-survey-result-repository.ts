@@ -11,7 +11,7 @@ export namespace ISaveSurveyResultRepository {
     surveyId: string
     accountId: string
     answer: string
-    data: Date
+    date: Date
   }
 
   export type Result = SurveyResultModel

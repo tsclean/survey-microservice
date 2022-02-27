@@ -11,6 +11,6 @@ export class LoadSurveyByIdController {
 
   @Get(':id')
   async loadSurveyByIdController (@Param() id: string): Promise<any> {
-    return await this.loadSurveyByIdService.loadById(id)
+    return await this.loadSurveyByIdService.loadById(id.id)
   }
 }
